@@ -1,8 +1,14 @@
 .contenedor{
+    font-family: 'Montserrat', sans-serif;
     text-align: center;
     width: 640px;
     display: block;
     margin: 0 auto;
     margin-top: 1em;
     padding: 30px 60px;
+  }
+
+  .btn-lg{
+    outline: none;
+    border: none;
   }

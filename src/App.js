@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 import credentials from './credentials/Firebase'
 import Login from './components/login/Login';
-import Menu from './components/menu/Menu';
+import Orders from './components/orders/Orders';
 
 class App extends Component {
   constructor (props) {
     super(props);
     this.state = {
-        user:{},
+        user: null,
     }
     this.authListener = this.authListener.bind(this)
   }
@@ -38,7 +38,7 @@ class App extends Component {
       <div className="App">
         <div>
         {/* <Login/> */}
-          {this.state.user ? (<Menu user ={this.state.user}/>) : (<Login/>)}
+          {this.state.user ? (<Orders user ={this.state.user}/>) : (<Login/>)}
         </div>
       </div>
     );
