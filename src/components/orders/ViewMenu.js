@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import firebase from firebase;
 import credentials from '../../credentials/Firebase';
 
 
@@ -8,47 +7,76 @@ import './ViewMenu.css';
 class ViewMenu extends Component {
   constructor(props){
     super(props);
-    //this.impMenu = this.impMenu.bind(this);
-    this.database = credentials.database().ref('menu'); 
+    this.database = credentials.database(); 
+    this.handleClickDesayuno = this.handleClickDesayuno.bind(this);
+    this.handleClickAlmuerzo = this.handleClickAlmuerzo.bind(this);
     this.state = {
-      menus:[
-        // {menu: 'Desayuno', menuId:1},
-        // {menu: 'Almuerzo-cena', menuId:2 }
-      ]
+      menus:[],
+      desayunos:[],
+      almuerzos: []
     };
   }
 
 
-
-  componentDidMount(){
-    this.database.on('value', snapshot => {
-      const menus = [];
-      snapshot.forEach(item => {
-        //console.log(Object.keys(item.val()))
-        const menu = Object.keys(item.val())
-        menus.push(menu)
-        //console.log(menus)
+  handleClickDesayuno () {
+        this.database.ref('Desayuno').on('value', snapshot => {
+          const desayunos = [];
+          snapshot.forEach(item => {
+          //console.log((item.val()))
+          const desayuno = Object.values(item.val())
+          desayunos.push(desayuno)
+          //console.log(desayunos)
+        })
+        this.setState({desayunos})
       })
-     this.setState({menus})
-    })
   }
+
+  handleClickAlmuerzo () {
+    this.database.ref('Almuerzo').on('value', snapshot => {
+      const almuerzos = [];
+      snapshot.forEach(item => {
+      console.log((item.val()))
+      const almuerzo = Object.values(item.val())
+      almuerzos.push(almuerzo)
+      console.log(almuerzos)
+    })
+    this.setState({almuerzos})
+  })
+}
+
+
+  
  
   
   render() {
-    //console.log(this.state)
+    
     return (
-      
+  
       <div className="container">
-        <div className="menuContainer">   
+        <div className="menuContainer text-center"> 
+          <button onClick= {this.handleClickDesayuno} className="btn btn-outline-warning mr-4">Desayuno</button>
+          <button onClick= {this.handleClickAlmuerzo} className="btn btn-outline-success">Almuerzo-cena</button>
+        </div> 
+        <div className="desayuno container mt-5">
             {
-              this.state.menus.map(menu => {
-                //console.log(menu)
+              this.state.desayunos.map((desayuno, i)=>{
                 return (
-                  <button  type="button" className="btn btn-primary btn-lg mr-2">{menu}</button>
+                  <button key={i} className="btn btn-lg btn-desayuno mr-5 mb-3">{" " + desayuno}</button>
                 )
               })
             }
-        </div> 
+          
+        </div>
+        <div className="almuerzo container mt-5">
+            {
+              this.state.almuerzos.map((almuerzo, i)=>{
+                return (
+                  <button key={i} className="btn btn-lg btn-almuerzo mr-5 mb-3">{" " + almuerzo}</button>
+                )
+              })
+            }
+          
+        </div>
        </div>
     );
   }

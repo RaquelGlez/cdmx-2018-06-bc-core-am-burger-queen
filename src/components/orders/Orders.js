@@ -19,7 +19,7 @@ class Orders extends Component {
       <div className="menu">
         <div><Navbar/></div>
         {/* <div><ResetPass/></div> */}
-        <div><ViewMenu/></div>
+        <div className="mt-4"><ViewMenu/></div>
       </div>
     );
   }

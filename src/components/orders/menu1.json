@@ -1,0 +1,85 @@
+
+{
+    "menu":[{
+        "Desayuno":[
+            {
+            "nombre": "Cafe americano",
+            "precio":5
+            },
+            {
+            "nombre":"Cafe con leche",
+            "precio":7
+            },
+            {
+            "nombre":"Sandwich de jamón y queso",
+            "precio":10
+            },
+            {
+            "nombre":"Jugo Natural",
+            "precio":7
+            }
+        ]
+    }, {
+        "Almuerzo-cena":[
+            {
+            "nombre":"Hamburguesas",
+            "tipo1":{
+                    "tamaño":"Simple",
+                    "precio":10
+                },
+                "tipo2":{
+                    "tamaño":"Doble",
+                    "precio":15
+                }
+            },
+            {
+                "version1": "Pollo",
+                "version2": "Res",
+                "version3": "Vegetariana"
+            },
+            {
+                "extra1": "Queso",
+                "extra2": "Huevo",
+                "precio": 1
+            },
+            {
+                "acompañamiento1": "Papas fritas",
+                "acompañamiento2": "Onion rings",
+                "precio": 5
+            },
+            {
+            "nombre": "Bebidas",
+                "tipo1": {
+                    "nombre": "Agua",
+                    "version1": {
+                        "opcion": "500 ml",
+                        "precio": 5
+                    },
+                    "version2": {
+                        "opcion": "750 ml",
+                        "precio":  8
+                    }
+                },
+                "tipo2": {
+                    "nombre": "Refresco",
+                    "version1": {
+                        "opcion": "500 ml",
+                        "precio": 7
+                    },
+                    "version2": {
+                        "opcion": "750 ml",
+                        "precio":  10
+                     }
+                }
+            } 
+        ]
+    }
+]
+}
+
+
+
+
+
+
+        

@@ -13,7 +13,8 @@ class Login extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            emailRestore: ''
         }
     }
 
@@ -30,7 +31,6 @@ class Login extends Component {
           alert('Debes ingresar un correo y contraseña validos')
         });
     }
-
 
 
         handleChange(e){
@@ -56,12 +56,12 @@ class Login extends Component {
                             <input value={this.state.password} onChange={this.handleChange} type="password" name="password" id="examplePassword" className="form-control form-input"/>
                         </form>
                     </section>
-                    <section className="btn btn-danger btn-block form-button mt-3 mb-4">
-                        <button type="submit" onClick={this.login} className="btn-block btn-danger ">Iniciar sesión</button>
+                    <section className="btn btn-danger btn-lg btn-block mt-3 mb-4">
+                        <button type="submit" onClick={this.login} className="btn btn-danger btn-lg btn-block ">Iniciar sesión</button>
                     </section>
                 </div>
                 <div>
-                    <a href={<ResetPass/>} type="submit" className="">Restablecer contraseña</a>
+                    <ResetPass/>
                 </div>
             </main>
             

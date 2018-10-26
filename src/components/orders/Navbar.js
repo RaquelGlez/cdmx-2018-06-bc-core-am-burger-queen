@@ -20,27 +20,22 @@ class Navbar extends Component {
 
     render() {
       return (
-        <nav className="navbar navbar-expand-lg navbar-light navbar-style">
-            <div className="navbar-brand">
-                <img src={logo} width="74px" alt="logo-burger-queen"/>
-            </div>
-            <form className="form-inline my-2 my-lg-0">
-                <span className="navbar-text">Bienvenid@</span>
-            </form>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <a className="navbar-brand" href="#/">
+                <img src={logo} width="70px" alt="logo-burger-queen" className="d-inline-block align-top"/>
+            </a>
+            <span className="navbar-text mr-auto ml-auto text-center">
+                Bienvenid@
+            </span>
+            <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse" id="navbarColor03">
-                <ul className="navbar-nav mr-auto">
-                    <li className="nav-item active">
-                        <div className="btn-group">
-                            <button onClick={this.logout} id="userExit" type="button" className="btn btn-dark" >Salir</button>
-                        </div>
-                    </li>
-                </ul>
+            <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <div className="navbar-nav ml-auto text-center">
+                    <a className="nav-item nav-link" href="#/" onClick={this.logout}>Cerrar sesión</a>
+                </div>
             </div>
-
-        </nav>
+        </nav> 
     );
   }
 }

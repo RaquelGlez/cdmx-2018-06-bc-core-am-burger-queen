@@ -1,0 +1,49 @@
+{
+    
+      "Desayuno" : [ {
+        "precio" : 5,
+        "nombre" : "Café americano"
+      }, {
+        "precio" : 7,
+        "nombre" : "Café con leche"
+      }, {
+        "precio" : 10,
+        "nombre" : "Sandwich"
+      }, {
+        "precio" : 7,
+        "nombre" : "Jugo natural"
+      } ],
+    
+      "Almuerzo" : [ {
+        "precio" : 10,
+        "nombre" : "Hamburguesa simple"
+      }, {
+        "precio" : 15,
+        "nombre" : "Hamburguesa doble"
+      }, {
+          "nombre": "Pollo"
+      },{
+          "nombre": "Res"
+      }, {
+          "nombre": "Vegetariana"
+      }, {
+        "precio" : 5,
+        "nombre" : "Papas fritas"
+      }, {
+        "precio" : 5,
+        "nombre" : "Onion rings"
+      }, {
+        "precio" : 5,
+        "nombre" : "Agua 500ml"
+      }, {
+        "precio" : 7,
+        "nombre" : "Agua 750ml"
+      }, {
+        "precio" : 5,
+        "nombre" : "Refreso 500ml"
+      }, {
+        "precio" : 10,
+        "nombre" : "Refresco 750ml"
+      } ]
+    
+    }
