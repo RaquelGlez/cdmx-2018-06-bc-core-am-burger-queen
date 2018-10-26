@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import credentials from '../../credentials/Firebase'
-
+import ResetPass from './ResetPass';
 
 // Assets
 import './Login.css';
@@ -13,7 +13,8 @@ class Login extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            emailRestore: ''
         }
     }
 
@@ -27,9 +28,9 @@ class Login extends Component {
           let errorMessage = error.message;
           console.log(errorCode);
           console.log(errorMessage);
+          alert('Debes ingresar un correo y contraseña validos')
         });
     }
-
 
 
         handleChange(e){
@@ -42,25 +43,26 @@ class Login extends Component {
             <main className="container">
                 <div className="contenedor">
                     <section className="col-sm">
-                        <img className="form-logo" src={logo} alt="Mi-Sazón"></img>
+                        <img className="form-logo" src={logo} alt="logo-BurgerQueen"></img>
                     </section>
                     <section className="">
-                        <formgroup>
-                            <label for="exampleEmail">Correo electrónico</label>
+                        <p className="mt-5 mb-5">Estimado colaborador, inicia sesión para hacer tus pedidos</p>
+                        <form>
+                            <label htmlFor="exampleEmail">Correo electrónico</label>
                             <input value={this.state.email} onChange={this.handleChange} type="email" name="email" id="exampleEmail" className="form-control form-input" placeholder="usuario@example.com" />
-                        </formgroup>
-                        <formgroup>
-                            <label for="examplePassword">Contraseña</label>
+                        </form>
+                        <form>
+                            <label htmlFor="examplePassword">Contraseña</label>
                             <input value={this.state.password} onChange={this.handleChange} type="password" name="password" id="examplePassword" className="form-control form-input"/>
-                        </formgroup>
+                        </form>
                     </section>
-                    <section className="btn btn-warning btn-block form-button mt-3">
-                        <button type="submit" onClick={this.login} className="btn-warning ">Iniciar sesión</button>
+                    <section className="btn btn-danger btn-lg btn-block mt-3 mb-4">
+                        <button type="submit" onClick={this.login} className="btn btn-danger btn-lg btn-block ">Iniciar sesión</button>
                     </section>
-      
                 </div>
-   
-                
+                <div>
+                    <ResetPass/>
+                </div>
             </main>
             
         );

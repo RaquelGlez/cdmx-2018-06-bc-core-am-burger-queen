@@ -1,0 +1,17 @@
+.menuContainer{
+    text-align: justify;
+
+}
+
+button {
+    font-family: 'Muli', sans-serif !important;
+    font-size: 22px !important;
+}
+
+.btn-desayuno {
+    background-color: #FFDA7D !important;
+}
+
+.btn-almuerzo {
+    background-color: #CBE3A3 !important;
+}
